@@ -1,17 +1,33 @@
+/* App.css */
+
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
-  background-image: url('/src/lotBg.svg');
-  background-size: cover; /* Fotoğrafın ekranı tamamen kaplamasını sağlar */
-  background-position: center; /* Fotoğrafı ortalar */
-  background-repeat: no-repeat; /* Fotoğrafın tekrarlamasını engeller */
-  height: 100vh; /* Görüntüleme alanının yüksekliği */
-  width: 100vw; /* Görüntüleme alanının genişliği */
-  overflow: hidden; /* Taşmayı engeller */
+  background-image: url('/src/mainBg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
+.pick-winner-background {
+  background-image: url('/src/pickWinnerBg.webp'); /* Bu yolu kendi dosyanıza göre güncelleyin */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white !important;
+  width: 100vw;
+  overflow: hidden;
+}
+.resultPick
+{
+  color: wheat !important;
+}
 
 nav {
   background-color: rgba(51, 51, 51, 0.8);
@@ -48,7 +64,7 @@ h1 {
   margin-top: 50px;
   color: rgb(9, 8, 8);
   font-size: 25px;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 p {
@@ -65,7 +81,7 @@ p {
   padding: 70px;
   border-radius: 10px;
   max-width: 600px;
-  margin: 50px auto;
+  margin: 110px auto;
 }
 
 .button-container {

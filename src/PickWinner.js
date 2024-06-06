@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import constants from './constants';
+import './App.css';  // CSS dosyanızın dahil edildiğinden emin olun
 
 function PickWinner() {
     const [owner, setOwner] = useState('');
@@ -68,26 +69,28 @@ function PickWinner() {
     };
 
     return (
-        <div className='container'>
-            <h1>Result Page</h1>
-            <div className='button-container'>
-                {status ? (
-                    <p>Lottery Winner is : {winner}</p>
-                ) : (
-                    isOwnerConnected ? (
-                        <button className="enter-button" onClick={pickWinner}> Pick Winner </button>
+        <div className="pick-winner-background">  {/* Arka plan sınıfı burada uygulanıyor */}
+            <div className='container'>
+                <h1 className='resultPick'>Result Page</h1>
+                <div className='button-container'>
+                    {status ? (
+                        <p>Lottery Winner is : {winner}</p>
                     ) : (
-                        <p>You are not the owner</p>
-                    )
-                )}
-            </div>
-            <div>
-                <h2>Previous Winners</h2>
-                <ul>
-                    {previousWinners.map((winner, index) => (
-                        <li key={index}>{winner}</li>
-                    ))}
-                </ul>
+                        isOwnerConnected ? (
+                            <button className="enter-button" onClick={pickWinner}> Pick Winner </button>
+                        ) : (
+                            <p>You are not the owner</p>
+                        )
+                    )}
+                </div>
+                <div>
+                    <h2>Previous Winners</h2>
+                    <ul>
+                        {previousWinners.map((winner, index) => (
+                            <li key={index}>{winner}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );
