@@ -1,38 +1,104 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  background-image: url('/src/lotBg.svg');
+  background-size: cover; /* Fotoğrafın ekranı tamamen kaplamasını sağlar */
+  background-position: center; /* Fotoğrafı ortalar */
+  background-repeat: no-repeat; /* Fotoğrafın tekrarlamasını engeller */
+  height: 100vh; /* Görüntüleme alanının yüksekliği */
+  width: 100vw; /* Görüntüleme alanının genişliği */
+  overflow: hidden; /* Taşmayı engeller */
+}
+
+
+nav {
+  background-color: rgba(51, 51, 51, 0.8);
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav li a {
+  color: white;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav li a:hover {
+  background-color: #111;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(9, 8, 8);
+  font-size: 25px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #151414;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 70px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.button-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.enter-button {
+  background-color: green;
   color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.enter-button:hover {
+  background-color: darkgreen;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.claim-button {
+  background-color: blue;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.claim-button:hover {
+  background-color: darkblue;
 }
