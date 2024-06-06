@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from 'ethers';
 import constants from './constants';
+import './App.css'; // CSS dosyanızın dahil edildiğinden emin olun
+import myGif from './dede.gif'; // GIF dosyasını içe aktarın
 
 function Home() {
     const [currentAccount, setCurrentAccount] = useState("");
@@ -103,6 +105,7 @@ function Home() {
     return (
         <div className="container">
             <h1>Lottery Page</h1>
+            <img src={myGif} alt="Lottery GIF" className="corner-gif" /> {/* GIF buraya eklendi */}
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             <p>Entry Fee: {entryFee} ETH</p>
             <p>Prize Amount: {prizeAmount} ETH</p>
@@ -117,6 +120,7 @@ function Home() {
                     <button className="enter-button" onClick={enterLottery}> Enter Lottery </button>
                 )}
             </div>
+            
         </div>
     );
 }
