@@ -9,7 +9,8 @@ function Home() {
     const [isWinner, setIsWinner] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [entryFee, setEntryFee] = useState('0.001');
-    const [prizeAmount, setPrizeAmount] = useState('');
+    const [prizeAmount, setPrizeAmount] = useState('0');
+    const [playerCount, setPlayerCount] = useState(0);
 
     useEffect(() => {
         const loadBlockchainData = async () => {
@@ -47,8 +48,10 @@ function Home() {
                         setIsWinner(false);
                     }
 
-                    const prize = await contractIns.getPrizeAmount();
-                    setPrizeAmount(ethers.utils.formatEther(prize));
+                    const players = await contractIns.getPlayers();
+                    setPlayerCount(players.length);
+                    const prize = players.length * parseFloat(entryFee);
+                    setPrizeAmount(prize.toFixed(3));
 
                 } catch (err) {
                     console.error('Error calling contract methods:', err);
@@ -74,6 +77,12 @@ function Home() {
 
                 const tx = await contractInstance.enter({ value: amountToSend });
                 await tx.wait();
+
+                // Prize amount'ı ve player count'u güncelle
+                const players = await contractInstance.getPlayers();
+                setPlayerCount(players.length);
+                const prize = players.length * parseFloat(entryFee);
+                setPrizeAmount(prize.toFixed(3));
             } catch (error) {
                 setErrorMessage(error.message);
             }
